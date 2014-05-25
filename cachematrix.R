@@ -1,8 +1,12 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 
-## makeCacheMatrix creates a list of functions that sets and gets the value of the list and sets and gets the value of the 
-## inverted matrix
+## To invert a matrix, set the matrix as part of the object makeCacheMatrix using the set function
+## Then call the cacheSolve function with the argument being the object constructed by makeCacheMatrix, 
+## will print out the inverted matrix.
+
+## makeCacheMatrix creates a list that 
+## sets and gets the value of the Cache
 
 makeCacheMatrix <- function(x = matrix()) {
 # Constructs an object 
@@ -41,3 +45,9 @@ cacheSolve <- function(x, ...) {
   m
 }
 
+## below is an example of application of the above
+mat <- matrix(c(1,2,4,5,6,7,8,1,2), nrow=3,ncol=3)
+go <- makeCacheMatrix()
+go$set(mat)
+go$get()
+cacheSolve(go)
